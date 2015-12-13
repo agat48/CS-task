@@ -1,0 +1,272 @@
+* {
+    text-align: center;
+    font-family: "Open Sans";
+}
+h2 {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: normal;
+    margin: 10px 0;
+    padding-bottom: 5px;
+}
+h3 {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 12px;
+    margin: 0;
+}
+h4 {
+    margin: 0;
+}
+p {
+    color: #bcc5cc;
+    font-size: 13px;
+    margin: 15px 0;
+    padding: 0;
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1206px;
+}
+#main-section, #product-section {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    /*border: 1px solid #e8e8e8; */
+}
+.main-section-column-container {
+    display: inline;
+}
+.main-section-tile-container {
+    position: relative;
+    width: 598px; 
+    display: inline;
+}
+.main-section-tile {
+    position: relative;
+    width: 301px;
+    height: 600px;
+    display: inline;
+    overflow: hidden;
+}
+#ratgeber, .tile {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+.tile {
+    border: 1px solid #e8e8e8;
+    border-bottom: none;
+}
+#main-section:last-child .tile:last-child {
+    border-bottom: 1px solid #e8e8e8;
+}
+.tile-link, .product-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: none;
+    transition: 0.3s background;
+}
+.tile-link:hover, .product-link:hover {
+    background: rgba(232, 232, 232, 0.2);
+}
+#product-signup {
+    height: 600px;
+    width: 100%;
+    background: url("../graphics/produktberater_bg.jpg");
+}
+.category-image {
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+.btn {
+    display: block;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 9px 0;
+    background: url("../graphics/arrow.png") no-repeat 170px center;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-family: "Open Sans";
+    font-weight: bold;
+    color: #000000;
+    transition: color 0.2s;
+    
+}
+.btn:hover {
+    color: #bcc5cc;
+}
+#product-signup .btn {
+    border: 1px solid #bcc5cc;
+}
+.blue {
+    color: #006fb9;
+}
+.product-signup-content, .tile-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 299px;
+    width: 205px;
+    margin: auto;
+}
+.product-signup-logo {
+    width: 42px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -30px;
+}
+.product-signup-logo img {
+    width: 100%;
+}
+
+#ratgeber {
+    background-color: #006fb9;
+    width: 301px;
+}
+
+#product-section {
+    margin-top: 10px;
+}
+.product-section-bg-tile {
+    width: 599px;
+    height: 599px;
+    display: flex;
+}
+.product-section-bg-tile .sponsor {
+    position: relative;
+    margin-top: 300px;
+}
+.sponsor:nth-child(2) {
+    order: 1;
+}
+.sponsor:nth-child(9) {
+    order: 2;
+}
+.deal-of-the-week {
+    width: 299px;
+    height: 300px;
+    background: #ffa88b;
+    position: absolute;
+}
+.deal-of-the-week-img {
+    width: 300px;
+    height: 300px;
+    visibility: hidden;
+}
+.heart, .hasbro, .haba {
+    margin-left: auto;
+    margin-right: auto;
+}
+.heart {
+    width: 31px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -15px;
+}
+.hasbro {
+    width: 158px;
+}
+.haba {
+    width: 143px;
+}
+.product {
+    order: 1;
+}
+.product-desc {
+    margin: 0;
+}
+.product-price {
+    margin: 0;
+}
+@media (min-width: 639px) {
+    .main-section-column-container {
+        display: flex;
+    }
+    .deal-of-the-week-img {
+        width: auto;
+        height: auto;
+        visibility: visible;
+    }
+    .tile {
+        border-left: none;
+    }
+    #product-section .tile:nth-child(odd), .sponsor {
+        border-left: 1px solid #e8e8e8;
+    }
+    
+    .main-section-column-container:last-child, #product-section .tile:nth-child(7), #product-section .tile:nth-child(8) {
+        border-bottom: 1px solid #e8e8e8;
+    }
+    
+}
+@media (min-width: 938px) {
+    .sponsor:nth-child(2) {
+        order: 0;
+        margin-top: 299px;
+    }
+    #product-section .tile:nth-child(odd), .sponsor {
+        border-left: none;
+    }
+    
+    #product-section .tile:nth-child(3n+1), .sponsor:first-child {
+        border-left: 1px solid #e8e8e8;
+    }
+}
+@media (min-width: 1237px) {
+    .tile, .main-section-column-container:last-child {
+        border: none;
+    }
+    #main-section {
+        border: 1px solid #e8e8e8;
+    }
+    #main-section .tile:nth-child(1) {
+        border-bottom: 1px solid #e8e8e8;
+    }
+    .product-section-bg-tile {
+        width: 897px;
+    }
+    .deal-of-the-week {
+        width: 598px;
+    }
+    .sponsor:nth-child(2) {
+        order: 0;
+        margin-top: 299px;
+    }
+    .product:nth-child(5) {
+        position: absolute;
+        top: 300px;
+        right: 2px;
+    }
+    .product, .sponsor, #product-section .tile:nth-child(odd) {
+        border: 1px solid #e8e8e8;
+        border-right: none;
+        border-bottom: none;
+    }
+    #product-section .tile:nth-child(7), #product-section .tile:nth-child(8) {
+        border-bottom: none;
+    }
+    #product-section {
+        border: 1px solid #e8e8e8;
+        border-left: none;
+        border-top: none;
+    }
+    
+}
