@@ -40,6 +40,9 @@ p {
 .main-section-column-container {
     display: inline;
 }
+.main-section-column-container:last-child, .sponsor:last-child {
+    border-bottom: 1px solid #e8e8e8;
+}
 .main-section-tile-container {
     position: relative;
     width: 598px; 
@@ -205,6 +208,7 @@ p {
         height: auto;
         visibility: visible;
     }
+    /* grid border */
     .tile {
         border-left: none;
     }
@@ -212,8 +216,11 @@ p {
         border-left: 1px solid #e8e8e8;
     }
     
-    .main-section-column-container:last-child, #product-section .tile:nth-child(7), #product-section .tile:nth-child(8) {
+    #product-section .tile:nth-child(7), #product-section .tile:nth-child(8) {
         border-bottom: 1px solid #e8e8e8;
+    }
+    .sponsor:nth-child(9) {
+        border-top: none;
     }
     
 }
@@ -222,6 +229,7 @@ p {
         order: 0;
         margin-top: 299px;
     }
+    /* grid border */
     #product-section .tile:nth-child(odd), .sponsor {
         border-left: none;
     }
@@ -229,17 +237,12 @@ p {
     #product-section .tile:nth-child(3n+1), .sponsor:first-child {
         border-left: 1px solid #e8e8e8;
     }
+    .sponsor:nth-child(9) {
+        border-top: 1px solid #e8e8e8;
+    }
 }
 @media (min-width: 1237px) {
-    .tile, .main-section-column-container:last-child {
-        border: none;
-    }
-    #main-section {
-        border: 1px solid #e8e8e8;
-    }
-    #main-section .tile:nth-child(1) {
-        border-bottom: 1px solid #e8e8e8;
-    }
+    
     .product-section-bg-tile {
         width: 897px;
     }
@@ -254,6 +257,18 @@ p {
         position: absolute;
         top: 300px;
         right: 2px;
+    }
+    
+    /* grid border */
+    
+    .tile, .main-section-column-container:last-child {
+        border: none;
+    }
+    #main-section {
+        border: 1px solid #e8e8e8;
+    }
+    #main-section .tile:nth-child(1) {
+        border-bottom: 1px solid #e8e8e8;
     }
     .product, .sponsor, #product-section .tile:nth-child(odd) {
         border: 1px solid #e8e8e8;

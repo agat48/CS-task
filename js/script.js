@@ -1,95 +1,97 @@
 function main() {
-    var products;
-    // generate array of products
+    var productsCollection;
+    
+    /**
+    * Generate array of products
+    * @returns {array} products
+    */
     function getProducts() {
-        var prods = [
+        var products = [
             {
                 name: "Blue Seven",
                 desc: "Wickelbody 2er Pack",
                 price: 19.99,
                 img: "./graphics/product-1.png",
-                link: "./"
+                link: "#"
             },
             {
                 name: "Blue Seven",
                 desc: "Wickelbody 2er Pack",
                 price: 19.99,
                 img: "./graphics/product-2.png",
-                link: "./"
+                link: "#"
             },
             {
                 name: "Queen Mom",
                 desc: "Schwangerschaftscardigan Judy",
                 price: 19.99,
                 img: "./graphics/product-3.png",
-                link: "./"
+                link: "#"
             },
             {
                 name: "Blue Seven",
                 desc: "Wickelbody 2er Pack",
                 price: 19.99,
                 img: "./graphics/product-4.png",
-                link: "./"
+                link: "#"
             },
             {
                 name: "Bornino Girls",
                 desc: "Jacket Long name here",
                 price: 19.99,
                 img: "./graphics/product-5.png",
-                link: "./"
+                link: "#"
             }
         ];
-        return prods;
+        return products;
     }
-    function displayProducts() {
-        var img, name, desc, price, link,
-            product, productClass, contentClass, imgClass, nameClass, descClass, priceClass, linkClass,
-            productsContainer, lastSponsor;
+    
+    /**
+    * Display products on site
+    * @param {array} products - array of products to display
+    */
+    function displayProducts(products) {
+        var product, productHTML, productsContainer, lastSponsor;
         
         productsContainer = '';
-        productClass = 'tile product';
-        contentClass = 'tile-content';
-        imgClass = 'producy-img';
-        nameClass = 'product-name';
-        descClass = 'product-desc';
-        priceClass = 'product-price';
-        linkClass = 'product-link';
         
         lastSponsor = document.getElementsByClassName('sponsor');
         lastSponsor = lastSponsor[lastSponsor.length - 1];
         
         for (var i = 0; i < products.length; i++) {
             
-            img = products[i].img;
-            name = products[i].name;
-            desc = products[i].desc;
-            price = products[i].price;
-            link = products[i].link;
+            product = products[i];
             
-            product = '<div class="' + productClass + '">' +
-                            '<div class="' + contentClass + '">' +
-                                '<img class="' + imgClass + '" src="' + img + '">' +
-                                '<h4 class="' + nameClass + '">' + name + '</h4>' +
-                                '<p class="' + descClass + '">' + desc + "</p>" +
-                                '<p class="' + priceClass + '">' + convertToCurrency(price, '&euro;') + '</p>' +
+            productHTML = '<div class="tile product">' +
+                            '<div class="tile-content">' +
+                                '<img class="product-img" src="' + product.img + '">' +
+                                '<h4 class="product-name">' + product.name + '</h4>' +
+                                '<p class="product-desc">' + product.desc + "</p>" +
+                                '<p class="product-price">' + convertToCurrency(product.price, '&euro;') + '</p>' +
                             '</div>' +
-                            '<a class="' + linkClass + '"></a>' +
+                            '<a class="product-link" href="' + product.link + '"></a>' +
                         '</div>';
-            productsContainer += product;
+            productsContainer += productHTML;
         }
         lastSponsor.insertAdjacentHTML('beforebegin', productsContainer);
     }
     
-    //convert number to currency string
-    //ifBefore - position of curency sign (if truthy - sign before the price)
+    /**
+    * Convert number to currency string
+    * @param {number} price - value to display
+    * @param {string} currencySign
+    * @param {boolean} ifBefore - position of curency sign (if truthy - sign before the price)
+    * @returns {string} convertedStr - string after conversion
+    */
     function convertToCurrency(price, currencySign, ifBefore) {
         var convertedStr;
+        ifBefore = ifBefore || false;
         convertedStr = ifBefore ? currencySign + ' ' + price : price + ' ' + currencySign;
         return convertedStr;
     }
     
-    products = getProducts();
-    displayProducts();
+    productsCollection = getProducts();
+    displayProducts(productsCollection);
 }
 
 
