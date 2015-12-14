@@ -32,10 +32,14 @@ p {
 }
 #main-section, #product-section {
     position: relative;
+    display: -webkit-flex;
+    -webkit-flex-flow: row wrap;
+    -webkit-justify-content: center;
+    -moz-flex-flow: row wrap;
+    -moz-justify-content: center;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    /*border: 1px solid #e8e8e8; */
 }
 .main-section-column-container {
     display: inline;
@@ -74,7 +78,10 @@ p {
     width: 100%;
     height: 100%;
     background: none;
-    transition: 0.3s background;
+    -webkit-transition: background 0.3s;
+    -moz-transition: background 0.3s;
+    -o-transition: background 0.3s;
+    transition: background 0.3s;
 }
 .tile-link:hover, .product-link:hover {
     background: rgba(232, 232, 232, 0.2);
@@ -108,6 +115,9 @@ p {
     font-family: "Open Sans";
     font-weight: bold;
     color: #000000;
+    -webkit-transition: color 0.2s;
+    -moz-transition: color 0.2s;
+    -o-transition: color 0.2s;
     transition: color 0.2s;
     
 }
@@ -122,6 +132,11 @@ p {
 }
 .product-signup-content, .tile-content {
     position: relative;
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+    -webkit-justify-content: center;
+    -moz-flex-direction: column;
+    -moz-justify-content: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -150,6 +165,7 @@ p {
 .product-section-bg-tile {
     width: 599px;
     height: 599px;
+    display: -webkit-flex;
     display: flex;
 }
 .product-section-bg-tile .sponsor {
@@ -157,9 +173,13 @@ p {
     margin-top: 300px;
 }
 .sponsor:nth-child(2) {
+    -webkit-order: 1;
+    -moz-order: 1;
     order: 1;
 }
 .sponsor:nth-child(9) {
+    -webkit-order: 2;
+    -moz-order: 2;
     order: 2;
 }
 .deal-of-the-week {
@@ -201,6 +221,7 @@ p {
 }
 @media (min-width: 639px) {
     .main-section-column-container {
+        display: -webkit-flex;
         display: flex;
     }
     .deal-of-the-week-img {
@@ -226,6 +247,8 @@ p {
 }
 @media (min-width: 938px) {
     .sponsor:nth-child(2) {
+        -webkit-order: 0;
+        -moz-order: 0;
         order: 0;
         margin-top: 299px;
     }
@@ -234,7 +257,7 @@ p {
         border-left: none;
     }
     
-    #product-section .tile:nth-child(3n+1), .sponsor:first-child {
+    #product-section .tile:nth-child(3n+1), .sponsor:nth-child(2) {
         border-left: 1px solid #e8e8e8;
     }
     .sponsor:nth-child(9) {
@@ -248,10 +271,6 @@ p {
     }
     .deal-of-the-week {
         width: 598px;
-    }
-    .sponsor:nth-child(2) {
-        order: 0;
-        margin-top: 299px;
     }
     .product:nth-child(5) {
         position: absolute;
